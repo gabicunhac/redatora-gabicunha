@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Force | Select-Object Mode, Name; Write-Output \"---GIT---\"; git rev-parse --is-inside-work-tree 2>$null; Write-Output \"---GH---\"; \\(Get-Command gh -ErrorAction SilentlyContinue\\).Source; Write-Output \"---GIT CMD---\"; \\(Get-Command git -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell(Write-Output \"=== git via where ===\"; try { where.exe git 2>$null } catch {}; Write-Output \"=== gh via where ===\"; try { where.exe gh 2>$null } catch {}; Write-Output \"=== winget ===\"; \\(Get-Command winget -ErrorAction SilentlyContinue\\).Source; Write-Output \"=== index.html size ===\"; \\(Get-Item index.html\\).Length; Write-Output \"=== img contents ===\"; Get-ChildItem img | Select-Object Name, Length)",
+      "PowerShell(winget install --id Git.Git -e --accept-source-agreements --accept-package-agreements --silent)",
+      "PowerShell(winget install --id GitHub.cli -e --accept-source-agreements --accept-package-agreements --silent)",
+      "PowerShell(Select-String -Path index.html -Pattern 'src=|href=' | Select-Object -First 30 | ForEach-Object { $_.Line.Trim\\(\\) })",
+      "PowerShell($gitPath = \"C:\\\\Program Files\\\\Git\\\\cmd\"; $ghPath = \"C:\\\\Program Files\\\\GitHub CLI\"; $env:Path = \"$gitPath;$ghPath;\" + $env:Path; Write-Output \"=== GIT ===\"; & \"$gitPath\\\\git.exe\" --version; Write-Output \"=== GH ===\"; if \\(Test-Path \"$ghPath\\\\gh.exe\"\\) { & \"$ghPath\\\\gh.exe\" --version } else { Write-Output \"gh nao em $ghPath\"; Get-ChildItem \"C:\\\\Program Files\\\\GitHub CLI\" -ErrorAction SilentlyContinue })",
+      "PowerShell($env:Path = \"C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Program Files\\\\GitHub CLI;\" + $env:Path; gh auth status 2>&1 | Out-String)"
+    ]
+  }
+}

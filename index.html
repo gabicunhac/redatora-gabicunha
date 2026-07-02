@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabriela Cunha | Redatora e Brand Strategist</title>
+<meta name="description" content="Gabriela Cunha, redatora e brand strategist desde 2021. Branding, performance e conteúdo pra marcas como Itaú, Heinz, Zurich, Oracle e L'Occitane.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F8F3EC;
+    --ink:#211712;
+    --green:#7E2B3A;
+    --marker:#EAC3BB;
+    --mist:#EFE4D8;
+    --gray:#6E5E53;
+    --line:#E3D5C7;
+    --radius:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--marker);color:var(--ink)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-variation-settings:"opsz" 30,"SOFT" 0,"WONK" 0}
+  .label{
+    font-weight:700;font-size:.72rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--green);
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(248,243,236,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+  .logo em{font-style:italic;color:var(--green)}
+  .nav ul{display:flex;gap:28px;list-style:none}
+  .nav a.link{text-decoration:none;color:var(--ink);font-size:.92rem;font-weight:600}
+  .nav a.link:hover{color:var(--green)}
+  .nav .cta{
+    background:var(--ink);color:var(--paper);
+    padding:9px 18px;border-radius:999px;
+    font-size:.88rem;font-weight:700;text-decoration:none;
+    transition:background .2s;
+  }
+  .nav .cta:hover{background:var(--green)}
+  .menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:150px 0 80px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  .ola{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:700;
+    font-size:clamp(4.2rem,11vw,8rem);line-height:.95;color:var(--green);
+    letter-spacing:-.02em;
+    animation:rise .8s ease both;
+  }
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(1.9rem,4vw,3rem);line-height:1.12;letter-spacing:-.01em;
+    margin-top:14px;
+    animation:rise .8s .12s ease both;
+  }
+  .hero h1 .hl{background:linear-gradient(180deg,transparent 58%,var(--marker) 58%);padding:0 .06em}
+  .hero p{
+    max-width:50ch;margin-top:22px;color:var(--gray);font-size:1.05rem;
+    animation:rise .8s .22s ease both;
+  }
+  .hero p strong{color:var(--ink)}
+  .hero-actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;animation:rise .8s .32s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:700;font-size:.95rem;
+    padding:13px 26px;border-radius:999px;transition:all .2s;
+  }
+  .btn-solid{background:var(--green);color:#fff}
+  .btn-solid:hover{background:var(--ink)}
+  .btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+  .hero-photo{position:relative;justify-self:end;animation:rise .9s .2s ease both}
+  .hero-photo img{
+    width:min(360px,80vw);aspect-ratio:4/4.6;object-fit:cover;
+    border-radius:46% 46% 40% 40% / 52% 52% 36% 36%;
+    border:3px solid var(--ink);
+    box-shadow:14px 14px 0 var(--marker);
+  }
+  .hero-photo .badge{
+    position:absolute;bottom:18px;left:-26px;
+    background:var(--ink);color:var(--paper);
+    font-weight:700;font-size:.8rem;padding:10px 16px;border-radius:999px;
+    transform:rotate(-6deg);
+  }
+
+  /* ---------- ticker ---------- */
+  .ticker{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    overflow:hidden;padding:20px 0;background:#fff;
+  }
+  .ticker-track{display:flex;gap:56px;width:max-content;animation:scroll 36s linear infinite}
+  .ticker:hover .ticker-track{animation-play-state:paused}
+  .ticker span{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:600;
+    font-size:1.35rem;color:var(--ink);white-space:nowrap;
+  }
+  .ticker .dot{color:var(--green);font-style:normal;font-size:1rem}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- sections ---------- */
+  section{padding:88px 0}
+  #escrita{padding-bottom:40px}
+  #sobre{padding-top:56px}
+  .sec-head{margin-bottom:48px}
+  .sec-head h2{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(1.9rem,3.6vw,2.6rem);letter-spacing:-.01em;margin-top:10px;
+  }
+  .sec-head p{color:var(--gray);margin-top:10px}
+
+  /* ---------- o que eu faço ---------- */
+  .rows{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .row{
+    padding:40px 30px 44px;border-right:1px solid var(--line);
+    transition:background .25s;
+  }
+  .row:last-child{border-right:none}
+  .row:hover{background:rgba(255,255,255,.6)}
+  .row .num{
+    display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;
+    font-size:1.5rem;color:var(--green);margin-bottom:14px;
+  }
+  .row h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.65rem;margin-bottom:12px}
+  .row p{color:var(--gray);font-size:.94rem}
+
+  /* ---------- projetos ---------- */
+  #projetos{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .case{
+    background:rgba(255,255,255,.72);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .25s,box-shadow .25s;
+  }
+  .case:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(33,23,18,.12)}
+  .cover{
+    height:190px;position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .cover[data-gallery]{cursor:pointer}
+
+  .cover img{
+    width:100%;height:100%;object-fit:cover;object-position:top;
+    transition:transform .35s ease;display:block;
+  }
+  .case:hover .cover img{transform:scale(1.05)}
+  .cover img.inst{object-position:center}
+  .cover img.logo{object-fit:contain;padding:26px;background:#fff}
+  .cover .hint{
+    position:absolute;right:12px;bottom:12px;
+    background:rgba(33,23,18,.85);color:#fff;
+    font-size:.72rem;font-weight:700;padding:6px 13px;border-radius:999px;
+    opacity:0;transition:opacity .25s;pointer-events:none;
+  }
+  .case:hover .cover .hint{opacity:1}
+  .case-body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .case-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .case h3{font-family:'Fraunces',serif;font-size:1.18rem;font-weight:600;line-height:1.25}
+  .agency{
+    font-size:.72rem;font-weight:700;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--green);
+  }
+  .period{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--gray);white-space:nowrap;text-transform:uppercase}
+  .case p{font-size:.9rem;color:var(--gray)}
+  .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}
+  .tag{font-size:.72rem;font-weight:700;color:var(--green);border:1px solid var(--green);border-radius:999px;padding:3px 11px}
+  .case a.more{color:var(--green);font-weight:700;font-size:.86rem;text-decoration:none}
+  .case a.more:hover{text-decoration:underline}
+
+  /* ---------- lightbox ---------- */
+  .lb{
+    position:fixed;inset:0;z-index:100;display:none;
+    background:rgba(23,14,11,.9);backdrop-filter:blur(6px);
+  }
+  .lb.open{display:block}
+  .lb-scroll{position:absolute;inset:0;overflow-y:auto;padding:84px 20px 50px}
+  .lb-grid{columns:3 260px;column-gap:16px}
+  .lb-grid img{
+    width:100%;height:auto;border-radius:12px;margin-bottom:16px;
+    display:block;break-inside:avoid;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    animation:fade .4s ease both;
+  }
+  .lb-close{
+    position:fixed;z-index:101;top:16px;right:16px;
+    background:rgba(248,243,236,.12);
+    border:1px solid rgba(248,243,236,.3);color:#fff;
+    width:46px;height:46px;border-radius:50%;cursor:pointer;
+    font-size:1.2rem;display:flex;align-items:center;justify-content:center;
+    transition:background .2s;font-family:inherit;
+  }
+  .lb-close:hover{background:var(--green)}
+  .lb-inner{max-width:980px;margin:0 auto}
+  .lb-info{color:#fff;max-width:700px;margin-bottom:28px}
+  .lb-info h3{
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.8rem;
+    letter-spacing:-.01em;margin-bottom:8px;
+  }
+  .lb-info .lb-period{
+    display:block;font-size:.78rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--marker);margin-bottom:14px;
+  }
+  .lb-info p{color:#D8CCC3;font-size:.96rem;line-height:1.65}
+
+  /* ---------- escrita: abas ---------- */
+  .tabs{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap}
+  .tab{
+    background:#fff;border:1.5px solid var(--line);border-radius:999px;
+    padding:10px 22px;font-weight:700;font-size:.9rem;cursor:pointer;
+    color:var(--ink);transition:all .2s;font-family:inherit;
+  }
+  .tab:hover{border-color:var(--green)}
+  .tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .panel{display:none}
+  .panel.active{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .panel a{
+    display:flex;align-items:center;gap:14px;
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:14px 18px;text-decoration:none;color:var(--ink);
+    font-size:.92rem;font-weight:600;line-height:1.4;
+    transition:border-color .2s,transform .2s;
+  }
+  .panel a:hover{border-color:var(--green);transform:translateX(4px)}
+  .panel a .thumb{
+    flex:none;width:58px;height:58px;border-radius:13px;
+    background:var(--marker);display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;position:relative;overflow:hidden;
+  }
+  .panel a .thumb img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:contain;padding:11px;background:#fff;
+  }
+  .panel a .thumb img.ph{object-fit:cover;padding:0}
+  .panel a small{display:block;color:var(--gray);font-weight:500;font-size:.78rem;margin-top:4px}
+
+  /* ---------- sobre ---------- */
+  #sobre .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  #sobre .bio p{margin-bottom:16px}
+  #sobre .bio p strong{color:var(--green)}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .fact{
+    background:#fff;border:1.5px solid var(--line);border-radius:999px;
+    padding:9px 18px;font-size:.86rem;font-weight:600;
+    transition:all .2s;cursor:default;
+  }
+  .fact:hover{border-color:var(--green);background:var(--marker)}
+  .certs{display:flex;flex-wrap:wrap;gap:9px}
+  .certs .fact{font-size:.8rem;padding:7px 14px;background:var(--paper);text-decoration:none;color:var(--ink);cursor:pointer}
+  .edu-compact{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+  .edu-compact h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;margin-bottom:18px}
+  .edu-line{
+    display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    padding:13px 0;border-bottom:1px dashed var(--line);
+  }
+  .edu-line:last-child{border-bottom:none}
+  .edu-line strong{font-weight:700;font-size:.95rem}
+  .edu-line small{display:block;color:var(--gray);font-size:.8rem;font-weight:500}
+  .edu-line .year{font-family:'Fraunces',serif;font-style:italic;color:var(--green);font-weight:600;white-space:nowrap}
+
+  /* ---------- contato ---------- */
+  #contato{background:var(--ink);color:var(--paper);border-radius:32px;margin:0 24px 80px;padding:84px 0}
+  #contato .wrap{text-align:center}
+  #contato h2{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(2rem,4.6vw,3.4rem);letter-spacing:-.01em;margin-bottom:14px;
+  }
+  .contact-sub{color:#CBB8AC;margin-bottom:36px}
+  #contato h2 em{font-style:italic;color:var(--marker)}
+  .contact-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  #contato .btn-solid{background:var(--marker);color:var(--ink)}
+  #contato .btn-solid:hover{background:#fff}
+  #contato .btn-ghost{border-color:#5C463C;color:var(--paper)}
+  #contato .btn-ghost:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+  footer{padding:0 0 36px;text-align:center;color:var(--gray);font-size:.85rem}
+  footer a{color:var(--green);text-decoration:none;font-weight:700}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal,.ola,.hero h1,.hero p,.hero-actions,.hero-photo{opacity:1;transform:none;transition:none;animation:none}
+    .ticker-track{animation:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- responsive ---------- */
+  @media(max-width:920px){
+    .hero-grid{grid-template-columns:1fr;gap:44px}
+    .hero-photo{justify-self:start}
+    .cases{grid-template-columns:1fr 1fr}
+    #sobre .about-grid{grid-template-columns:1fr;gap:40px}
+    .rows{grid-template-columns:1fr}
+    .row{border-right:none;border-bottom:1px solid var(--line);padding:30px 6px}
+    .row:last-child{border-bottom:none}
+  }
+  @media(max-width:680px){
+    .nav ul{
+      display:none;position:absolute;top:64px;left:0;right:0;
+      background:var(--paper);flex-direction:column;gap:0;
+      border-bottom:1px solid var(--line);padding:10px 24px 20px;
+    }
+    .nav ul.open{display:flex}
+    .nav ul li{padding:10px 0}
+    .menu-btn{display:block}
+    .nav .cta{display:none}
+    .cases,.panel.active{grid-template-columns:1fr}
+    section{padding:64px 0}
+    .hero{padding:120px 0 60px}
+    #contato{margin:0 12px 56px}
+    .hero-photo .badge{left:0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Gabriela <em>Cunha</em></a>
+    <button class="menu-btn" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <ul id="menu">
+      <li><a class="link" href="#projetos">Projetos</a></li>
+      <li><a class="link" href="#escrita">Escrita</a></li>
+      <li><a class="link" href="#sobre">Sobre</a></li>
+      <li><a class="link" href="#contato">Contato</a></li>
+    </ul>
+    <a class="cta" href="https://wa.me/5551996263521?text=Ol%C3%A1%21+Encontrei+seu+portf%C3%B3lio+e+gostaria+de+conversar." target="_blank" rel="noopener">Vamos conversar</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="ola">Olá!</div>
+        <h1>Me chamo <span class="hl">Gabriela Cunha</span>.</h1>
+        <p>Redatora desde 2021, formada em <strong>Marketing</strong>, especialista em <strong>Neurociência do Consumidor</strong> e <strong>Médica Veterinária</strong>.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#projetos">Ver projetos</a>
+          <a class="btn btn-ghost" href="#contato">Entrar em contato</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="img/profile.jpg" alt="Foto de Gabriela Cunha">
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Itaú</span><span class="dot">✳</span>
+      <span>Heinz</span><span class="dot">✳</span>
+      <span>Zurich</span><span class="dot">✳</span>
+      <span>Oracle</span><span class="dot">✳</span>
+      <span>L'Occitane au Brésil</span><span class="dot">✳</span>
+      <span>Mattel</span><span class="dot">✳</span>
+      <span>Old Spice</span><span class="dot">✳</span>
+      <span>Gillette Venus</span><span class="dot">✳</span>
+      <span>SECOM SP</span><span class="dot">✳</span>
+      <span>Hemmer</span><span class="dot">✳</span>
+      <span>Estácio</span><span class="dot">✳</span>
+      <span>Wyden</span><span class="dot">✳</span>
+      <span>Itaú</span><span class="dot">✳</span>
+      <span>Heinz</span><span class="dot">✳</span>
+      <span>Zurich</span><span class="dot">✳</span>
+      <span>Oracle</span><span class="dot">✳</span>
+      <span>L'Occitane au Brésil</span><span class="dot">✳</span>
+      <span>Mattel</span><span class="dot">✳</span>
+      <span>Old Spice</span><span class="dot">✳</span>
+      <span>Gillette Venus</span><span class="dot">✳</span>
+      <span>SECOM SP</span><span class="dot">✳</span>
+      <span>Hemmer</span><span class="dot">✳</span>
+      <span>Estácio</span><span class="dot">✳</span>
+      <span>Wyden</span><span class="dot">✳</span>
+    </div>
+  </div>
+
+  <!-- O QUE EU FAÇO -->
+  <section id="faco">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Especialidades</span>
+        <h2>O que eu faço</h2>
+      </div>
+      <div class="rows">
+        <div class="row reveal">
+          <span class="num">01</span>
+          <h3>Branding</h3>
+          <p>Plataformas de marca, naming, identidade verbal, taglines, manifestos, posicionamento, brand guides e conceitos para KVs.</p>
+        </div>
+        <div class="row reveal">
+          <span class="num">02</span>
+          <h3>Performance</h3>
+          <p>Campanhas online e offline, peças always on, réguas de relacionamento e copy pensada pra converter.</p>
+        </div>
+        <div class="row reveal">
+          <span class="num">03</span>
+          <h3>Conteúdo</h3>
+          <p>Blogs, landing pages, anúncios, materiais ricos, comunicação institucional e roteiros de vídeo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Portfólio</span>
+        <h2>Projetos em destaque</h2>
+        <p>Clique nos cards para ver as peças em tela cheia.</p>
+      </div>
+      <div class="cases">
+
+        <div class="case reveal">
+          <div class="cover" data-gallery="itau-1.jpg,itau-2.jpg,itau-3.jpg" data-title="Ecossistema Itaú" data-period="Setembro de 2022 a janeiro de 2026 · OLIVER Latin America" data-desc="Criação de conteúdo para o rebranding do Itaú Personnalité, segmento de alta renda do Itaú Unibanco, que passou por transformações significativas, com novas ofertas, tom de voz e identidade visual. Foram desenvolvidas novas páginas para o site, mensagens de aviso, e-mails, campanhas e outras comunicações on e off. Também criei peças para outros segmentos do Itaú: Itaú Shop, Varejo, Seguros, Câmbio e Investimentos.">
+            <img class="inst" src="img/logo-itau.jpg" alt="Itaú Personnalité" loading="lazy">
+            <span class="hint">Ver peças ↗</span>
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>Itaú e Rebranding do Itaú Personnalité</h3>
+            </div>
+            <span class="agency">OLIVER Latin America</span>
+            <p>Participação no rebranding do Itaú Personnalité, segmento de alta renda do Itaú Unibanco, e criação de peças para Itaú, Uniclass, Seguros, Câmbio e Investimentos.</p>
+            <div class="tags"><span class="tag">Branding</span><span class="tag">CRM</span><span class="tag">Campanhas</span></div>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover">
+            <img src="https://swt.co/wp-content/uploads/2026/04/pack-copy.jpg" alt="Embalagens da linha Teddy Glow" loading="lazy">
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>Teddy Glow</h3>
+            </div>
+            <span class="agency">Sweety &amp; Co.</span>
+            <p>Linha de cosméticos da Teddy Fresh que leva a energia do streetwear pra beleza. Atuei nos textos de divulgação em inglês e português e em ajustes de identidade verbal.</p>
+            <div class="tags"><span class="tag">Branding</span><span class="tag">PT / EN</span></div>
+            <a class="more" href="https://swt.co/project/teddy-glow" target="_blank" rel="noopener">Ver projeto completo →</a>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover">
+            <img src="https://swt.co/wp-content/uploads/2026/03/1.jpg" alt="Identidade visual da Zoza" loading="lazy">
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>Zoza</h3>
+            </div>
+            <span class="agency">Sweety &amp; Co.</span>
+            <p>Refrigerante de fruta com ingredientes naturais e um naming que nasce do apelido "gasosa". Escrevi textos de divulgação e participei de ajustes de branding do projeto.</p>
+            <div class="tags"><span class="tag">Branding</span><span class="tag">Divulgação</span></div>
+            <a class="more" href="https://swt.co/project/zoza" target="_blank" rel="noopener">Ver projeto completo →</a>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover">
+            <img src="https://swt.co/wp-content/uploads/2026/04/V3.jpeg" alt="Embalagens da Salted" loading="lazy">
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>Salted</h3>
+            </div>
+            <span class="agency">Sweety &amp; Co.</span>
+            <p>Skincare alemão de origem marinha, com um sistema visual que traduz o equilíbrio do oceano. Atuei nos textos de divulgação e em ajustes de identidade verbal.</p>
+            <div class="tags"><span class="tag">Branding</span><span class="tag">Identidade verbal</span></div>
+            <a class="more" href="https://swt.co/project/salted" target="_blank" rel="noopener">Ver projeto completo →</a>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover">
+            <img class="inst" src="img/logo-cadastra.jpg" alt="Cadastra" loading="lazy">
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>Campanhas institucionais e KVs</h3>
+            </div>
+            <span class="agency">Cadastra</span>
+            <p>Criação de conceitos para KVs e campanhas institucionais da marca. O projeto está em fase de lançamento e as peças entram aqui assim que forem ao ar.</p>
+            <div class="tags"><span class="tag">Conceito</span><span class="tag">KV</span><span class="tag">Institucional</span></div>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover" data-gallery="wyden-1.jpg,wyden-2.jpg,wyden-3.jpg" data-title="Wyden e Estácio" data-period="Janeiro a março de 2026 · Cadastra" data-desc="Redação para mídias digitais de grandes marcas do setor educacional, como Estácio e Wyden, com banners de performance para graduação, pós-graduação EAD e programas internacionais, além de peças para ativações no BBB 2026.">
+            <img class="inst" src="img/logo-wyden.jpg" alt="Wyden" loading="lazy">
+            <span class="hint">Ver peças ↗</span>
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>Wyden e Estácio</h3>
+            </div>
+            <span class="agency">Cadastra</span>
+            <p>Redação para mídias digitais de grandes marcas do setor educacional, com banners de performance para graduação, pós-graduação EAD e programas internacionais.</p>
+            <div class="tags"><span class="tag">Performance</span><span class="tag">Educação</span></div>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover" data-gallery="oracle-1.jpg,oracle-2.jpg" data-title="Oracle Red Bull Racing" data-period="2025 a 2026 · WPP Production" data-desc="Criação e revisão de conteúdo para redes sociais no apoio à extensão da parceria entre Oracle e Red Bull Racing, com posts em português e espanhol e adaptação cultural entre os dois idiomas.">
+            <img class="inst" src="img/logo-orbr.jpg" alt="Oracle Red Bull Racing" loading="lazy">
+            <span class="hint">Ver peças ↗</span>
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>Oracle Red Bull Racing</h3>
+            </div>
+            <span class="agency">WPP Production</span>
+            <p>Conteúdo para redes sociais na extensão da parceria entre Oracle e Red Bull Racing, com versões em português e espanhol.</p>
+            <div class="tags"><span class="tag">Social</span><span class="tag">PT / ES</span></div>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover" data-gallery="zurich-1.jpg,zurich-2.jpg" data-title="Zurich Seguros" data-period="2025 a 2026 · WPP Production" data-desc="Criação e revisão de peças para redes sociais da Zurich, contemplando posts, stories, carrosséis e roteiros de vídeo, como a campanha do Mês do Consumidor do seguro Zurich Celular. Também apoiei o desenvolvimento do calendário editorial da marca.">
+            <img class="inst" src="img/logo-zurich.jpg" alt="Zurich Seguros" loading="lazy">
+            <span class="hint">Ver peças ↗</span>
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>Zurich Seguros</h3>
+            </div>
+            <span class="agency">WPP Production</span>
+            <p>Criação e revisão de peças para redes sociais, como a campanha do Mês do Consumidor do seguro Zurich Celular, além de calendário editorial da marca.</p>
+            <div class="tags"><span class="tag">Social</span><span class="tag">Campanhas</span></div>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover" data-gallery="secom-1.jpg,secom-2.jpg,secom-3.jpg" data-title="SECOM SP · São Paulo Pra Toda Obra" data-period="Julho de 2025 · WPP Production" data-desc="Revisão e padronização de textos para o projeto São Paulo Pra Toda Obra, com peças entregues pela Hogarth. Ajustes e alinhamento de texto em diferentes formatos, com mudanças em tempo real e alto volume de entregas.">
+            <img class="inst" src="img/logo-secom.jpg" alt="Governo do Estado de São Paulo" loading="lazy">
+            <span class="hint">Ver peças ↗</span>
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>SECOM SP · São Paulo Pra Toda Obra</h3>
+            </div>
+            <span class="agency">WPP Production</span>
+            <p>Revisão e padronização de textos em diferentes formatos, com mudanças em tempo real e alto volume de entregas, em parceria com a Hogarth.</p>
+            <div class="tags"><span class="tag">Revisão</span><span class="tag">Institucional</span></div>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover" data-gallery="expo-3.jpg,expo-1.jpg,expo-2.jpg" data-title="O Voo das Andorinhas" data-period="Agosto de 2024 · OLIVER Latin America" data-desc="A exposição O Voo das Andorinhas foi criada para celebrar os 250 anos de Campinas no Investment Center Campinas, em uma ação exclusiva para clientes Itaú Personnalité. Fui responsável pela criação do nome, a escrita dos convites, dos e-mails e dos textos que acompanharam as obras do artista Lucas Paulucci, garantindo uma experiência coerente do começo ao fim.">
+            <img src="img/cover-expo.jpg" alt="Obra da exposição O Voo das Andorinhas" loading="lazy">
+            <span class="hint">Ver peças ↗</span>
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>250 anos de Campinas · Personnalité</h3>
+            </div>
+            <span class="agency">OLIVER Latin America</span>
+            <p>Exposição exclusiva pra clientes Personnalité. Criei o naming, os convites, os e-mails e os textos que acompanharam as obras do artista Lucas Paulucci.</p>
+            <div class="tags"><span class="tag">Naming</span><span class="tag">Experiência</span></div>
+            <a class="more" href="https://www.instagram.com/p/C-Ih1hoOy9Q/?__d=1" target="_blank" rel="noopener">Ver vídeo da exposição →</a>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover" data-gallery="locc-1.jpg,locc-2.jpg" data-title="L'Occitane au Brésil" data-period="Setembro a outubro de 2024" data-desc="Atualização da landing page de revendedoras da L'Occitane au Brésil. O principal desafio foi equilibrar o tom leve e descontraído da comunicação com uma abordagem persuasiva que transmitisse o potencial de ganhos e crescimento dentro da rede. Os textos foram desenvolvidos com foco em despertar desejo, valorizando um portfólio inspirado na natureza brasileira. O resultado é uma página mais envolvente e estratégica.">
+            <img class="inst" src="img/logo-locc.jpg" alt="L'Occitane au Brésil" loading="lazy">
+            <span class="hint">Ver peças ↗</span>
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>L'Occitane au Brésil</h3>
+            </div>
+            <span class="agency">L'Occitane au Brésil</span>
+            <p>Atualização da landing page de revendedoras, equilibrando o tom leve da marca com uma abordagem persuasiva sobre potencial de ganhos na rede.</p>
+            <div class="tags"><span class="tag">Identidade verbal</span><span class="tag">Landing page</span></div>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover" data-gallery="ecom-1.jpg,ecom-2.jpg,ecom-3.jpg,ecom-4.jpg,ecom-5.jpg" data-title="Claims para e-commerce" data-period="Maio a julho de 2023 · Outpromo" data-desc="Participação em um projeto envolvendo Gillette Venus, Old Spice, Heinz e Hemmer. Com base nos objetivos de cada marca, criamos claims persuasivos e impactantes usados em vários materiais de e-commerce, como eStores, galerias, páginas de produto e banners de linha, mantendo identidade visual e tom de voz consistentes em todas as plataformas.">
+            <img class="inst" src="img/logo-outpromo.jpg" alt="integer\outpromo" loading="lazy">
+            <span class="hint">Ver peças ↗</span>
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>Venus · Old Spice · Heinz · Hemmer</h3>
+            </div>
+            <span class="agency">Outpromo</span>
+            <p>Claims persuasivos para eStores, galerias, páginas de produto e banners de linha, com identidade e tom de voz consistentes em todas as plataformas.</p>
+            <div class="tags"><span class="tag">E-commerce</span><span class="tag">Claims</span></div>
+          </div>
+        </div>
+
+        <div class="case reveal">
+          <div class="cover" data-gallery="stb-1.jpg,stb-2.jpg,stb-3.jpg" data-title="STB · Páginas de destinos" data-period="Dezembro de 2022 a março de 2023 · Student Travel Bureau" data-desc="Criação e revisão de conteúdo para 45 páginas de destinos de intercâmbio, com participação em reuniões de alinhamento e pesquisa extensa em diferentes idiomas.">
+            <img class="inst" src="img/logo-stb.jpg" alt="STB Student Travel Bureau" loading="lazy">
+            <span class="hint">Ver peças ↗</span>
+          </div>
+          <div class="case-body">
+            <div class="case-top">
+              <h3>45 páginas de destinos de intercâmbio</h3>
+            </div>
+            <span class="agency">Student Travel Bureau</span>
+            <p>Criação e revisão de conteúdo com pesquisa extensa em diferentes idiomas e participação nas reuniões de alinhamento estratégico.</p>
+            <div class="tags"><span class="tag">Conteúdo</span><span class="tag">SEO</span><span class="tag">PT / EN / ES</span></div>
+          </div>
+        </div>
+
+        
+
+        
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ESCRITA -->
+  <section id="escrita">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Na prática</span>
+        <h2>Mais escrita</h2>
+      </div>
+      <div class="tabs reveal">
+        <button class="tab active" data-panel="p-blog">Blog posts</button>
+        <button class="tab" data-panel="p-social">Redes sociais</button>
+        <button class="tab" data-panel="p-ebook">Materiais ricos</button>
+      </div>
+
+      <div class="panel active" id="p-blog">
+        <a href="https://c3csoftware.com.br/blog/crm-salesforce/" target="_blank" rel="noopener"><span class="thumb"><img class="ph" src="img/th-crm.jpg" alt="" loading="lazy"></span><span>Como saber se o CRM Salesforce é a ferramenta ideal para sua empresa?<small>C3C Software</small></span></a>
+        <a href="https://golfleet.com.br/plano-de-manutencao-para-frota/" target="_blank" rel="noopener"><span class="thumb"><img class="ph" src="img/th-frota.jpg" alt="" loading="lazy"></span><span>Você sabe fazer um plano de manutenção para frota?<small>Golfleet</small></span></a>
+        <a href="https://vbpo.com.br/como-aplicar-kpis-e-okrs/" target="_blank" rel="noopener"><span class="thumb"><img class="ph" src="img/th-kpis.jpg" alt="" loading="lazy"></span><span>KPIs e OKRs: como aplicar os indicadores no seu negócio<small>VBPO</small></span></a>
+        <a href="https://blog.bioage.com.br/fototipos-de-pele/" target="_blank" rel="noopener"><span class="thumb"><img class="ph" src="img/th-pele.jpg" alt="" loading="lazy"></span><span>Guia dos fototipos de pele: saiba como identificar<small>Bioage</small></span></a>
+        <a href="https://vbpo.com.br/tendencias-das-vendas-b2b/" target="_blank" rel="noopener"><span class="thumb"><img class="ph" src="img/th-b2b.jpg" alt="" loading="lazy"></span><span>14 tendências das vendas B2B para conquistar clientes<small>VBPO</small></span></a>
+        <a href="https://golfleet.com.br/biocombustivel/" target="_blank" rel="noopener"><span class="thumb"><img class="ph" src="img/th-bio.jpg" alt="" loading="lazy"></span><span>Biocombustível: vantagens de utilizar em sua frota<small>Golfleet</small></span></a>
+      </div>
+
+      <div class="panel" id="p-social">
+        <a href="https://www.instagram.com/p/CpbLmbMMih0/" target="_blank" rel="noopener"><span class="thumb"><img class="ph" src="img/th-chantree.jpg" alt="" loading="lazy"></span><span>CHANTRÊE<small>Perfumaria</small></span></a>
+        <a href="https://www.instagram.com/p/CYUo_JCv4eH/" target="_blank" rel="noopener"><span class="thumb"><img class="ph" src="img/th-cais.jpg" alt="" loading="lazy"></span><span>Studio CAIS Arquitetura<small>Arquitetura</small></span></a>
+        <a href="https://www.instagram.com/p/Cfps7rAuPhO/" target="_blank" rel="noopener"><span class="thumb"><img class="ph" src="img/th-cbs.jpg" alt="" loading="lazy"></span><span>Metalúrgica CBS<small>Serviços</small></span></a>
+        <a href="https://www.instagram.com/p/CaqNMdOuzqd/" target="_blank" rel="noopener"><span class="thumb"><img class="ph" src="img/th-organic.jpg" alt="" loading="lazy"></span><span>Clínica Organic<small>Fisioterapia infantil</small></span></a>
+        <a href="https://www.instagram.com/p/CcoJee4poWU/" target="_blank" rel="noopener"><span class="thumb"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=128" alt="" loading="lazy" onerror="this.remove()">💆‍♀️</span><span>Estética Aline Gomes<small>Estética</small></span></a>
+        <a href="https://www.instagram.com/p/Cf7fsXdOOe6/" target="_blank" rel="noopener"><span class="thumb"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=128" alt="" loading="lazy" onerror="this.remove()">🎓</span><span>Contra DP Monitores<small>Educação</small></span></a>
+      </div>
+
+      <div class="panel" id="p-ebook">
+        <a href="https://media.journoportfolio.com/users/318054/uploads/286b00b3-115a-4840-87f8-88d0e9ae10ad.pdf" target="_blank" rel="noopener"><span class="thumb">📗</span><span>Fluxo de caixa para clínicas odontológicas<small>eBook</small></span></a>
+        <a href="https://conteudo.golfleet.com.br/material-rico-sistema-de-rastreamento-para-motos/" target="_blank" rel="noopener"><span class="thumb"><img src="https://www.google.com/s2/favicons?domain=golfleet.com.br&sz=128" alt="" loading="lazy" onerror="this.remove()">📘</span><span>Sistema de rastreamento para motos<small>Golfleet · Material rico</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Bastidores</span>
+        <h2>Sobre mim</h2>
+      </div>
+      <div class="about-grid">
+        <div class="bio reveal">
+          <p>Sou do Rio Grande do Sul e escrevo profissionalmente desde 2021. Comecei na <strong>Medicina Veterinária</strong>, migrei pro <strong>Marketing</strong> e me especializei em <strong>Neurociência do Consumidor</strong>.</p>
+          <p>Acredito na comunicação que abre espaço para conversas relevantes e ajuda boas ideias a chegarem aonde precisam. Sou curiosa, atenta e organizada, e hoje procuro projetos onde possa unir tudo isso aos meus conhecimentos em <strong>tecnologia, IA, branding e performance</strong>.</p>
+          <div class="facts">
+            <span class="fact">🐶 Mãe do Mike</span>
+            <span class="fact">🐱 Mãe da Jinx, do Will e do Boris</span>
+            <span class="fact">🏃‍♀️ Corredora de provas de rua</span>
+            <span class="fact">🥾 Trilheira nas horas vagas</span>
+            <span class="fact">📚 Sempre com um livro (ou o Kindle) por perto</span>
+            <span class="fact">✈️ Viajante em construção</span>
+          </div>
+        </div>
+        <div class="edu-compact reveal">
+          <h3>Formação</h3>
+          <div class="edu-line">
+            <div><strong>Bacharelado em Marketing</strong><small>Senac RS</small></div>
+            <span class="year">2025</span>
+          </div>
+          <div class="edu-line">
+            <div><strong>Neurociência do Consumidor</strong><small>Unyleya · Especialização</small></div>
+            <span class="year">2023</span>
+          </div>
+          <div class="edu-line">
+            <div><strong>Bacharelado em Medicina Veterinária</strong><small>UniRitter</small></div>
+            <span class="year">2020</span>
+          </div>
+          <h3 style="margin-top:26px">Certificações</h3>
+          <div class="certs">
+            <a class="fact" href="https://www.linkedin.com/in/gabriela-cunha-494979110/details/certifications/" target="_blank" rel="noopener">Branding ↗</a>
+            <a class="fact" href="https://www.linkedin.com/in/gabriela-cunha-494979110/details/certifications/" target="_blank" rel="noopener">Governança de Inteligência Artificial ↗</a>
+            <a class="fact" href="https://www.linkedin.com/in/gabriela-cunha-494979110/details/certifications/" target="_blank" rel="noopener">Technical Writing ↗</a>
+            <a class="fact" href="https://www.linkedin.com/in/gabriela-cunha-494979110/details/certifications/" target="_blank" rel="noopener">Copywriting ↗</a>
+            <a class="fact" href="https://www.linkedin.com/in/gabriela-cunha-494979110/details/certifications/" target="_blank" rel="noopener">SEO e Marketing de Conteúdo ↗</a>
+            <a class="fact" href="https://www.linkedin.com/in/gabriela-cunha-494979110/details/certifications/" target="_blank" rel="noopener">Empreendedorismo em Pequenas Empresas ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="wrap reveal">
+      <h2>Vamos trabalhar <em>juntos</em>?</h2>
+      <div class="contact-actions">
+        <a class="btn btn-solid" href="https://wa.me/5551996263521?text=Ol%C3%A1%21+Encontrei+seu+portf%C3%B3lio+e+gostaria+de+conversar." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-ghost" href="mailto:gabriela_cunhac@hotmail.com">Enviar e-mail</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/gabriela-cunha-494979110/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Gabriela Cunha · <a href="https://www.linkedin.com/in/gabriela-cunha-494979110/" target="_blank" rel="noopener">LinkedIn</a></p>
+</footer>
+
+<!-- GALERIA -->
+<div class="lb" id="lb" role="dialog" aria-label="Galeria de peças">
+  <button class="lb-close" id="lbClose" aria-label="Fechar">✕</button>
+  <div class="lb-scroll" id="lbScroll">
+    <div class="lb-inner">
+      <div class="lb-info" id="lbInfo"></div>
+      <div class="lb-grid" id="lbGrid"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // reveal
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+  // abas
+  document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.panel).classList.add('active');
+  }));
+
+  // galeria em grade
+  const lb=document.getElementById('lb'),lbGrid=document.getElementById('lbGrid'),
+        lbInfo=document.getElementById('lbInfo'),lbScroll=document.getElementById('lbScroll');
+  document.querySelectorAll('.cover[data-gallery]').forEach(c=>{
+    c.addEventListener('click',()=>{
+      const gal=c.dataset.gallery.split(',');
+      lbInfo.innerHTML='<h3>'+(c.dataset.title||'')+'</h3>'
+        +(c.dataset.period?'<span class="lb-period">'+c.dataset.period+'</span>':'')
+        +(c.dataset.desc?'<p>'+c.dataset.desc+'</p>':'');
+      lbGrid.innerHTML='';
+      gal.forEach((g,i)=>{
+        const img=document.createElement('img');
+        img.src='img/'+g;
+        img.alt=(c.dataset.title||'')+' · peça '+(i+1);
+        img.loading='lazy';
+        img.style.animationDelay=(i*.06)+'s';
+        lbGrid.appendChild(img);
+      });
+      lb.classList.add('open');
+      document.body.style.overflow='hidden';
+      lbScroll.scrollTop=0;
+    });
+  });
+  function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('lbClose').addEventListener('click',closeLb);
+  lb.addEventListener('click',e=>{if(e.target===lb||e.target===lbScroll)closeLb()});
+  document.addEventListener('keydown',e=>{
+    if(lb.classList.contains('open')&&e.key==='Escape')closeLb();
+  });
+</script>
+
+</body>
+</html>
